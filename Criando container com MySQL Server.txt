@@ -1,15 +1,8 @@
 Criando container com MySQL Server
 Para criar um container com o MySQL faça o seguinte:
-docker run -p 3306:3306 --name=mysqlalura -d mysql/mysql-server
-Esse comando roda um container chamado “mysqlalura” a partir de uma imagem do MySQL Server e mapeia a porta 3306 do container com a sua de mesmo número. Dê um docker ps e veja o que tem rodando na sua máquina.
+docker run -d --name mysqlalura -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e "MYSQL_ROOT_PASSWORD=Alura123" mysql
+Em nosso exemplo, a imagem Docker foi usada para iniciar um novo contêiner.
 
-Se conectando no MySQL Server e configurando senha
-Pegue a senha randômica gerada:
-docker logs mysqlalura 2>&1 | grep GENERATED
-Copie a root password que apareceu e rode o comando:
-docker exec -it mysqlalura mysql -uroot -p
-Cole a password e dê enter. Depois disso, já no server, digite:
-ALTER USER 'root'@'localhost' IDENTIFIED BY '12345';
-Isso vai mudar a senha padrão do usuário para 12345. Depois rode o seguinte:
-update mysql.user set host = '%' where user='root';daswsd 
-Esse comando vai permitir que você conecte o Workbench no container. Dê um ctrl-D e depois um docker restart seu-container.
+O novo contêiner está usando a porta local 3306.
+O Nome do Banco mysqlalura
+A senha MySQL configurada foi Alura123.
