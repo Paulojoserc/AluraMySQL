@@ -1,6 +1,6 @@
-#SQL com MySQL: manipule e consulte dados
+# SQL com MySQL: manipule e consulte dados
 
-##Faça esse curso de SQL e Banco de Dados e:
+## Faça esse curso de SQL e Banco de Dados e:
 	-Saiba instalar e acessar o banco de dados MySQL
 	-Realize consultas com SELECT e filtre com WHERE
 	-Adicionando dados no banco com o INSERT
